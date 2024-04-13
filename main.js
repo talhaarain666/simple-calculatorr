@@ -11,7 +11,7 @@ let answer = await inquirer.prompt([
         message: "Select operator to perform action",
         type: 'list',
         name: "operator",
-        choices: ['Addition', 'Subtraction', 'Multiplication', 'Division']
+        choices: ['Addition', 'Subtraction', 'Multiplication', 'Division', 'Exponentiation']
     }
 ]);
 if (answer.operator === 'Addition') {
@@ -25,6 +25,9 @@ else if (answer.operator === 'Multiplication') {
 }
 else if (answer.operator === 'Division') {
     console.log(answer.firstNumber / answer.secondNumber);
+}
+else if (answer.operator === 'Exponentiation') {
+    console.log(Math.pow(answer.firstNumber, answer.secondNumber));
 }
 else {
     console.log('Please select a valid operator');
